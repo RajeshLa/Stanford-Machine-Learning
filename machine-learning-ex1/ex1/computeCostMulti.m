@@ -18,5 +18,8 @@ J = 0;
 
 
 % =========================================================================
+error = X*theta - y;
 
+% (x*theta - y)^2 is equivalent to this more efficient operation below
+J = (error'*error)/(2*m); 
 end

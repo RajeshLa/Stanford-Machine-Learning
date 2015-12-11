@@ -24,14 +24,16 @@ for iter = 1:num_iters
 
 
 
-
+    theta_change=zeros(length(theta),1);
 
 
     % ============================================================
 
     % Save the cost J in every iteration    
     J_history(iter) = computeCostMulti(X, y, theta);
-
+    theta_change = X'*(X*theta - y);
+    theta_change = theta_change*alpha/m;
+    theta = theta - theta_change;
 end
 
 end
